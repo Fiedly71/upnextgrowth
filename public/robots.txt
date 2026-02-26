@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Pages à exclure du crawl
+Disallow: /dashboard
+Disallow: /checkout
+Disallow: /configurateur
+
+# Sitemap
+Sitemap: https://upnextgrowth.com/sitemap.xml
