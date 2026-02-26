@@ -78,9 +78,6 @@ export default function InstallPWA() {
   // Ne rien afficher si déjà installé
   if (isStandalone) return null
 
-  // Ne rien afficher si pas de prompt disponible et pas iOS
-  if (!deferredPrompt && !isIOS) return null
-
   return (
     <>
       {/* Bannière flottante d'installation */}
@@ -90,7 +87,7 @@ export default function InstallPWA() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
-            className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-96 z-50"
+            className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-96 z-50 mb-16 md:mb-0"
           >
             <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
               <div className="p-4 md:p-5">
@@ -223,12 +220,13 @@ export default function InstallPWA() {
       </AnimatePresence>
 
       {/* Bouton fixe d'installation (visible sur mobile uniquement si pas en standalone) */}
-      {(deferredPrompt || isIOS) && !showInstallBanner && (
+      {!showInstallBanner && (
         <motion.button
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 2 }}
           onClick={handleInstallClick}
-          className="fixed bottom-20 right-4 md:hidden w-14 h-14 rounded-full bg-gradient-accent text-white shadow-lg flex items-center justify-center z-40"
+          className="fixed bottom-24 right-4 md:hidden w-14 h-14 rounded-full bg-gradient-accent text-white shadow-lg flex items-center justify-center z-40"
           aria-label="Installer l'application"
         >
           <Download className="w-6 h-6" />

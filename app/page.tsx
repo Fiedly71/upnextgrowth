@@ -6,6 +6,7 @@ import ServiceShowcaseSection from '@/components/ServiceShowcaseSection'
 import PricingPreviewSection from '@/components/PricingPreviewSection'
 import BenefitsSection from '@/components/BenefitsSection'
 import ProcessSection from '@/components/ProcessSection'
+import TestimonialsSection from '@/components/TestimonialsSection'
 import TrustSection from '@/components/TrustSection'
 import CTASection from '@/components/CTASection'
 import FAQSection from '@/components/FAQSection'
@@ -22,6 +23,7 @@ export default function Home() {
       <PricingPreviewSection />
       <BenefitsSection />
       <ProcessSection />
+      <TestimonialsSection />
       <TrustSection />
       <CTASection />
       <FAQSection />

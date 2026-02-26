@@ -24,8 +24,8 @@ export default function PricingCard({ package: pkg }: PricingCardProps) {
   return (
     <div 
       className={`
-        relative bg-white rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2
-        ${pkg.popular ? 'border-4 border-success-500 scale-105' : 'border border-gray-200'}
+        relative bg-white rounded-2xl shadow-xl p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2
+        ${pkg.popular ? 'border-4 border-success-500 md:scale-105' : 'border border-gray-200'}
       `}
     >
       {pkg.popular && (

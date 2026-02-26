@@ -4,6 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Safe area for mobile devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Add padding to body for mobile bottom nav */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

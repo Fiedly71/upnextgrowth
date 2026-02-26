@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import InstallPWA from '@/components/InstallPWA'
+import CookieConsent from '@/components/CookieConsent'
+import MobileBottomNav from '@/components/MobileBottomNav'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://upnextgrowth.com'),
@@ -107,8 +109,14 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         {children}
         
+        {/* Mobile Bottom Navigation */}
+        <MobileBottomNav />
+        
         {/* PWA Install Prompt */}
         <InstallPWA />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsent />
         
         {/* Service Worker Registration */}
         <Script id="sw-register" strategy="afterInteractive">
