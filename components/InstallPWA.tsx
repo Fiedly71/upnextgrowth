@@ -78,6 +78,10 @@ export default function InstallPWA() {
   // Ne rien afficher si déjà installé
   if (isStandalone) return null
 
+  // Ne rien afficher si pas de possibilité d'installation (pas iOS et pas de prompt)
+  const canInstall = deferredPrompt || isIOS
+  if (!canInstall) return null
+
   return (
     <>
       {/* Bannière flottante d'installation */}
